@@ -1,6 +1,6 @@
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 234, 367, 8, 89];
 const n = arr.length;
-const numOfRotations = 0;
+const numOfRotations = 25;
 const k = numOfRotations % n;
 const rotatedArray = [];
 console.log("arr>>>", arr);
