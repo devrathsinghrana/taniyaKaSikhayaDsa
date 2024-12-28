@@ -32,11 +32,9 @@ const reverseArray = (inputArray) => {
 
 reverseArray(arr);
 
-// Reversing first half of array
-
 let i = 0;
-let j = n / 2 - 1;
-while (i < n / 2 && j >= 0) {
+let j = k - 1;
+while (i < k / 2 && j >= k / 2) {
   const backupValueToBeSwapped = arr[i];
   arr[i] = arr[j];
   arr[j] = backupValueToBeSwapped;
@@ -44,10 +42,9 @@ while (i < n / 2 && j >= 0) {
   j--;
 }
 
-// Reversing second half of array
-let y = n / 2;
+let y = k;
 let z = n - 1;
-while (y < n && z >= n / 2 - 1) {
+while (y < n / 2 + 1 && z >= n / 2 + 1) {
   const backupValueToBeSwapped = arr[y];
   arr[y] = arr[z];
   arr[z] = backupValueToBeSwapped;
