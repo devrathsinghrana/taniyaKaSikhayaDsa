@@ -1,6 +1,6 @@
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 234, 367, 8, 89];
+const arr = [1,2,3,4,5];
 const n = arr.length;
-const numOfRotations = 25;
+const numOfRotations = 9;
 const k = numOfRotations % n;
 const rotatedArray = [];
 console.log("arr>>>", arr);
@@ -35,6 +35,7 @@ function inplaceMethod() {
     const n = inputArray.length;
     let i = 0;
     let j = n - 1;
+    if (i === j) return;
     while (i < n / 2 && j >= n / 2) {
       const backupValueToBeSwapped = inputArray[i];
       inputArray[i] = inputArray[j];
@@ -47,24 +48,30 @@ function inplaceMethod() {
 
   reverseArray(arr);
 
-  let i = 0;
-  let j = k - 1;
-  while (i < k / 2 && j >= k / 2) {
-    const backupValueToBeSwapped = arr[i];
-    arr[i] = arr[j];
-    arr[j] = backupValueToBeSwapped;
-    i++;
-    j--;
+  // Reverse first half of array
+  let p = 0;
+  let q = k - 1;
+  if (p !== q) {
+    while (p < k / 2 && q >= k / 2) {
+      const backupValueToBeSwapped = arr[p];
+      arr[p] = arr[q];
+      arr[q] = backupValueToBeSwapped;
+      p++;
+      q--;
+    }
   }
 
-  let y = k;
-  let z = n - 1;
-  while (y < n / 2 + 1 && z >= n / 2 + 1) {
-    const backupValueToBeSwapped = arr[y];
-    arr[y] = arr[z];
-    arr[z] = backupValueToBeSwapped;
-    y++;
-    z--;
+  // Reverse second half of array
+  let x = k;
+  let y = n - 1;
+  if (x !== y) {
+    while (x < k + (n - k) / 2 && y >= k + (n - k) / 2) {
+      const backupValueToBeSwapped = arr[x];
+      arr[x] = arr[y];
+      arr[y] = backupValueToBeSwapped;
+      x++;
+      y--;
+    }
   }
 
   console.log("rotatedArray by inplace>>>", arr);
