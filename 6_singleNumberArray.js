@@ -62,7 +62,6 @@ The total space usage is proportional to the unique elements \( u \), so the **s
 */
 const myArray = [1, 2, 3, 4, 1, 2, 3];
 
-let result = 0;
 const singleNumberArray = (arrIn) => {
   const uniqueSum = new Set(arrIn);
   const totalUniqueSum = [...uniqueSum].reduce((a, b) => a + b, 0);
