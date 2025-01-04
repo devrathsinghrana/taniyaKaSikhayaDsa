@@ -1,6 +1,6 @@
-const arr = [1, 2, 3];
+const arr = [1,2,3,4];
 const n = arr.length;
-const numOfRotations = 1;
+const numOfRotations = 9;
 const k = numOfRotations % n;
 const rotatedArray = [];
 
@@ -47,10 +47,10 @@ function inplaceMethod() {
   reverseArray(arr, 0, n - 1);
 
   // Reverse first half of array
-  reverseArray(arr, 0, k - 2);
+  reverseArray(arr, 0, n - k - 1);
 
   // Reverse second half of array
-  reverseArray(arr, k - 1, n - 1);
+  reverseArray(arr, n - k, n - 1);
   console.log("rotatedArray by inplace>>>", arr);
 }
 
